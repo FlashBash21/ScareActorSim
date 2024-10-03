@@ -49,3 +49,5 @@ func _physics_process(delta):
 		velocity.z = 0.0 #move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	print(Engine.get_frames_per_second())

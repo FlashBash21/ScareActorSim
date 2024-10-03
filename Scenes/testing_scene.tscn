@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0e268mogkrta"]
+
+[ext_resource type="PackedScene" uid="uid://ccegtpocg0r0x" path="res://Scenes/Objects/BasicAndTesting/BasicFloor.tscn" id="1_4etwq"]
+[ext_resource type="PackedScene" uid="uid://cgtrmkgfodorb" path="res://Scenes/player.tscn" id="1_37ffc"]
+[ext_resource type="LightmapGIData" uid="uid://kfokhpghpias" path="res://Lightmaps/testing_scene.lmbake" id="3_y1rea"]
+
+[sub_resource type="Environment" id="Environment_f8mb5"]
+background_mode = 1
+background_color = Color(0.2677, 0.685387, 1, 1)
+ambient_light_energy = 0.0
+
+[node name="TestingScene" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_37ffc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15043, 3.04482, 0.356136)
+
+[node name="MainRegion" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="BasicFloor" parent="MainRegion" instance=ExtResource("1_4etwq")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="BasicFloor2" parent="MainRegion" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, -10, 0, 0)
+
+[node name="BasicFloor3" parent="MainRegion" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, 10, 0, 0)
+
+[node name="BasicFloor4" parent="MainRegion" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, 10)
+
+[node name="BasicFloor5" parent="MainRegion" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, -10)
+
+[node name="CubeRegion1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15)
+
+[node name="BasicFloor" parent="CubeRegion1" instance=ExtResource("1_4etwq")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="BasicFloor2" parent="CubeRegion1" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, -10, 0, 0)
+
+[node name="BasicFloor3" parent="CubeRegion1" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, 10, 0, 0)
+
+[node name="BasicFloor4" parent="CubeRegion1" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, 10)
+
+[node name="BasicFloor5" parent="CubeRegion1" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, -10)
+
+[node name="CubeRegion2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 15)
+
+[node name="BasicFloor" parent="CubeRegion2" instance=ExtResource("1_4etwq")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="BasicFloor2" parent="CubeRegion2" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, -10, 0, 0)
+
+[node name="BasicFloor3" parent="CubeRegion2" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, 10, 0, 0)
+
+[node name="BasicFloor4" parent="CubeRegion2" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, 10)
+
+[node name="BasicFloor5" parent="CubeRegion2" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, -10)
+
+[node name="CubeRegion3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15)
+
+[node name="BasicFloor" parent="CubeRegion3" instance=ExtResource("1_4etwq")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="BasicFloor2" parent="CubeRegion3" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, -10, 0, 0)
+
+[node name="BasicFloor3" parent="CubeRegion3" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, 10, 0, 0)
+
+[node name="BasicFloor4" parent="CubeRegion3" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, 10)
+
+[node name="BasicFloor5" parent="CubeRegion3" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, -10)
+
+[node name="CubeRegion4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15)
+
+[node name="BasicFloor" parent="CubeRegion4" instance=ExtResource("1_4etwq")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="BasicFloor2" parent="CubeRegion4" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, -10, 0, 0)
+
+[node name="BasicFloor3" parent="CubeRegion4" instance=ExtResource("1_4etwq")]
+transform = Transform3D(-4.37114e-07, 10, 0, -10, -4.37114e-07, 0, 0, 0, 10, 10, 0, 0)
+
+[node name="BasicFloor4" parent="CubeRegion4" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, 10)
+
+[node name="BasicFloor5" parent="CubeRegion4" instance=ExtResource("1_4etwq")]
+transform = Transform3D(1.91069e-14, -4.37114e-07, -10, -10, -4.37114e-07, 0, -4.37114e-07, 10, -4.37114e-07, 0, 0, -10)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f8mb5")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+light_data = ExtResource("3_y1rea")
