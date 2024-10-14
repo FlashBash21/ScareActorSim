@@ -9,6 +9,7 @@ add_uv2 = true
 size = Vector3(2, 0.1, 2)
 
 [node name="BasicFloor" type="StaticBody3D"]
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_wyd4m")
