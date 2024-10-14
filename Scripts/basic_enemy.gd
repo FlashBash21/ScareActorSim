@@ -15,7 +15,9 @@ func _physics_process(delta: float) -> void:
 	if nav_agent.is_navigation_finished():
 		return
 	var next_position := nav_agent.get_next_path_position()
-	var direction := (next_position - global_position).normalized()
+	var direction := (next_position - global_position)
+	direction.y = 0
+	direction = direction.normalized()
 
 	#global_position = global_position.move_toward(next_position, delta * SPEED)
 	velocity.x = direction.x * SPEED

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0e268mogkrta"]
+[gd_scene load_steps=9 format=3 uid="uid://b0e268mogkrta"]
 
 [ext_resource type="PackedScene" uid="uid://ccegtpocg0r0x" path="res://Scenes/Objects/BasicAndTesting/BasicFloor.tscn" id="1_4etwq"]
 [ext_resource type="PackedScene" uid="uid://cgtrmkgfodorb" path="res://Scenes/player.tscn" id="1_37ffc"]
 [ext_resource type="Script" path="res://Scenes/testing_scene.gd" id="1_xwa7y"]
 [ext_resource type="LightmapGIData" uid="uid://kfokhpghpias" path="res://Lightmaps/testing_scene.lmbake" id="3_y1rea"]
-[ext_resource type="PackedScene" uid="uid://d06bo4bqo38l7" path="res://Scenes/basic_enemy.tscn" id="5_n2of4"]
+[ext_resource type="PackedScene" uid="uid://dxilsysubg6a7" path="res://Scenes/basic_enemy.tscn" id="5_n2of4"]
+[ext_resource type="PackedScene" uid="uid://dtixh4cyhbgve" path="res://Scenes/Managers/agent_controller.tscn" id="6_ordbw"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_sr6ru"]
 vertices = PackedVector3Array(-38.25, 40.5, -38.25, 38.25, 40.5, -38.25, 39.75, 40.5, -39.5, 39.5, 40.5, -41.5, -39.5, 40.5, -41.5, -39.5, 40.5, -39.75, -41.5, 40.5, 39.75, -40, 40.5, 39.75, -38.5, 40.5, 38.25, -41.5, 40.5, -39.5, -37.25, 2.5, -39.5, -37.25, 2.5, -38.5, 37.5, 2.5, -38.5, 37.5, 2.5, -39.5, 38.5, 40.5, 38, 40, 40.5, 39.75, 41.5, 40.5, 39.75, 41.5, 40.5, -39.5, -39.25, 2.5, -39.25, -39.25, 2.5, -38.5, -38.5, 2.5, -38.5, -38.5, 2.5, -39.25, 38.75, 2.5, -39.25, 38.75, 2.5, -38.5, 39.5, 2.5, -38.5, 39.5, 2.5, -39.25, -39.5, 2.5, -37.25, -39.5, 2.5, 37.5, -38.5, 2.5, 37.5, -38.5, 2.5, -37.25, -37.25, 2.5, -24, -26, 2.5, -23.75, -26, 2.5, -25.25, -25.25, 2.5, -26, -23.75, 2.5, -26, -24, 2.5, -37.25, -37.25, 2.5, -37.25, -6, 2.5, -26, -5.75, 2.5, -37.25, -3.75, 2.5, -25.25, -3.75, 2.5, -23.5, 4, 2.5, -23.5, 4, 2.5, -25.25, 4.75, 2.5, -26, 6.25, 2.5, -26, 6, 2.5, -37.25, -4.5, 2.5, -26, 24, 2.5, -26, 24.25, 2.5, -37.25, 26.25, 2.5, -25.25, 26.25, 2.5, -23.75, 37.5, 2.5, -24, 25.5, 2.5, -26, 37.5, 2.5, -37.25, 38.75, 2.5, -37.25, 38.75, 2.5, 37.5, 39.5, 2.5, 37.5, 39.5, 2.5, -37.25, -37.25, 2.5, -5.75, -26, 2.5, -6, 26.25, 2.5, -6, 37.5, 2.5, -5.75, -3.75, 2.5, -6.25, 4, 2.5, -6.25, -4.5, 2.5, -3.75, -6.25, 2.5, -3.75, -6.25, 2.5, 4, -4.5, 2.5, 4, 4, 2.5, 4.75, 4.75, 2.5, 4, 4.75, 2.5, -3.75, -3.75, 2.5, 4.75, -3.75, 2.5, 6.5, 4, 2.5, 6.5, 4, 2.5, -4.5, -3.75, 2.5, -4.5, 6.5, 2.5, 4, 6.5, 2.5, -3.75, -25.25, 2.5, 4, -23.5, 2.5, 4, -23.5, 2.5, -3.75, -25.25, 2.5, -3.75, -37.25, 2.5, 6, -26, 2.5, 6.25, -26, 2.5, 4.75, -26, 2.5, -4.5, 23.75, 2.5, -3.75, 23.75, 2.5, 4, 25.5, 2.5, 4, 25.5, 2.5, -3.75, 26.25, 2.5, 4.75, 26.25, 2.5, 6.25, 37.5, 2.5, 6, 26.25, 2.5, -4.5, -37.25, 2.5, 24.25, -26, 2.5, 24, 26.25, 2.5, 24, 37.5, 2.5, 24.25, -3.75, 2.5, 23.75, 4, 2.5, 23.75, 4, 2.5, 25.5, -3.75, 2.5, 25.5, -4.5, 2.5, 26.25, -6, 2.5, 26.25, -5.75, 2.5, 37.5, 4.75, 2.5, 26.25, 6, 2.5, 37.5, 6.25, 2.5, 26.25, -24, 2.5, 37.5, -23.75, 2.5, 26.25, -25.25, 2.5, 26.25, -26, 2.5, 25.5, -37.25, 2.5, 37.5, 26.25, 2.5, 25.5, 25.5, 2.5, 26.25, 24, 2.5, 26.25, 24.25, 2.5, 37.5, 37.5, 2.5, 37.5, -39.5, 40.5, 40, 38.25, 40.5, 38.5, 39.5, 40.5, 40, 39.5, 40.5, 41.5, -39.5, 40.5, 41.5, -39.25, 2.5, 38.75, -39.25, 2.5, 39.5, -38.5, 2.5, 39.5, -38.5, 2.5, 38.75, -37.25, 2.5, 38.75, -37.25, 2.5, 39.75, 37.5, 2.5, 39.75, 37.5, 2.5, 38.75, 38.75, 2.5, 38.75, 38.75, 2.5, 39.5, 39.5, 2.5, 39.5, 39.5, 2.5, 38.75)
@@ -18,9 +19,10 @@ ambient_light_energy = 0.0
 script = ExtResource("1_xwa7y")
 
 [node name="Player" parent="." instance=ExtResource("1_37ffc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15043, 3.04482, 0.356136)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.045, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.90735e-06, 0)
 navigation_mesh = SubResource("NavigationMesh_sr6ru")
 
 [node name="MainRegion" type="Node3D" parent="NavigationRegion3D"]
@@ -139,5 +141,8 @@ environment = SubResource("Environment_f8mb5")
 [node name="LightmapGI" type="LightmapGI" parent="."]
 light_data = ExtResource("3_y1rea")
 
-[node name="BasicEnemy" parent="." instance=ExtResource("5_n2of4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.919, 3.77441, 0.844693)
+[node name="AgentController" parent="." node_paths=PackedStringArray("nav_area", "TEMP_PLAYER_REF") instance=ExtResource("6_ordbw")]
+basic_enemy = ExtResource("5_n2of4")
+spawn_points = Array[Vector3]([Vector3(30, 6, 0), Vector3(-30, 6, 0), Vector3(0, 6, 30), Vector3(0, 6, -30)])
+nav_area = NodePath("../NavigationRegion3D")
+TEMP_PLAYER_REF = NodePath("../Player")
