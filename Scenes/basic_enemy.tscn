@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d06bo4bqo38l7"]
+
+[ext_resource type="Script" path="res://Scripts/basic_enemy.gd" id="1_ungdh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0d16"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jlk7q"]
+
+[node name="BasicEnemy" type="CharacterBody3D"]
+collision_layer = 4
+script = ExtResource("1_ungdh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_q0d16")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_jlk7q")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

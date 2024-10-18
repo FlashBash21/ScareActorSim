@@ -5,9 +5,11 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 2.5
 const SENSITIVITY = 0.003
 const MAX_STAMINA = 1.
+const SPRINT_MULTI = 1.5
 
 
 var stamina = MAX_STAMINA
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -66,12 +68,11 @@ func _physics_process(delta):
 	#update velocities
 	if direction:
 			
-		velocity.x = direction.x * (SPEED)
-		velocity.z = direction.z * (SPEED)
+		velocity.x = direction.x * (SPEED) * (1 + (Input.get_action_strength("sprint") * SPRINT_MULTI))
+		velocity.z = direction.z * (SPEED) * (1 + (Input.get_action_strength("sprint") * SPRINT_MULTI))
+		
 	else:
 		velocity.x = 0.0 #move_toward(velocity.x, 0, SPEED)
 		velocity.z = 0.0 #move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	
-	#print(Engine.get_frames_per_second())
