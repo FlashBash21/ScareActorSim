@@ -6,6 +6,7 @@ const JUMP_VELOCITY = 2.5
 const SENSITIVITY = 0.003
 const MAX_STAMINA = 1.
 
+
 var stamina = MAX_STAMINA
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -14,10 +15,28 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
-
+var oxygen_bar = 100.0
+var mask_on = true
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+func toggle_mask():
+	mask_on = !mask_on
+	
+func oxygen_control():
+	if mask_on:
+		oxygen_bar -= .1
+		if(oxygen_bar <= 0):
+			print("you died")
+	else:
+		if(oxygen_bar < 100):
+			oxygen_bar += .1
+		
+	
+	
+	print("oxygen level: ", oxygen_bar)
+
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -33,7 +52,12 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+		
+	if Input.is_action_just_pressed("mask"):
+		toggle_mask()
+		print("toggle mask - ", mask_on)
+	
+	oxygen_control()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
@@ -50,4 +74,4 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	print(Engine.get_frames_per_second())
+	#print(Engine.get_frames_per_second())

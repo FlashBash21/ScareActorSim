@@ -19,3 +19,4 @@ mesh = SubResource("CapsuleMesh_ggj70")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621856, -0.484977)
+fov = 37.8493
