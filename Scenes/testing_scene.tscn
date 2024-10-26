@@ -144,5 +144,6 @@ light_data = ExtResource("3_y1rea")
 [node name="AgentController" parent="." node_paths=PackedStringArray("nav_area", "TEMP_PLAYER_REF") instance=ExtResource("6_ordbw")]
 basic_enemy = ExtResource("5_n2of4")
 spawn_points = Array[Vector3]([Vector3(30, 6, 0), Vector3(-30, 6, 0), Vector3(0, 6, 30), Vector3(0, 6, -30)])
+wander_points = Array[Vector3]([Vector3(20, 0, 0), Vector3(0, 0, 20), Vector3(-20, 0, 0), Vector3(0, 0, -20), Vector3(20, 0, 20), Vector3(20, 0, -20), Vector3(-20, 0, 20), Vector3(-20, 0, -20)])
 nav_area = NodePath("../NavigationRegion3D")
 TEMP_PLAYER_REF = NodePath("../Player")

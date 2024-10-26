@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxilsysubg6a7"]
+[gd_scene load_steps=7 format=3 uid="uid://dxilsysubg6a7"]
 
 [ext_resource type="Script" path="res://Scripts/basic_enemy.gd" id="1_ungdh"]
 [ext_resource type="Texture2D" uid="uid://3vs40jgeg2xs" path="res://Assets/mask.png" id="2_vnvpg"]
+[ext_resource type="Texture2D" uid="uid://bik8m33rwsrk8" path="res://Assets/question mark.png" id="3_2xx5f"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q0d16"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jlk7q"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5kupq"]
+points = PackedVector3Array(0, 0, 0, 10, 0, -15, -10, 0, -15, 0, 0, -18)
 
 [node name="BasicEnemy" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -19,7 +23,25 @@ shape = SubResource("CapsuleShape3D_q0d16")
 mesh = SubResource("CapsuleMesh_jlk7q")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
+avoidance_enabled = true
+radius = 5.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.51166, -0.551104)
 texture = ExtResource("2_vnvpg")
+
+[node name="Visibility" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="VisibilityBox" type="CollisionShape3D" parent="Visibility"]
+shape = SubResource("ConvexPolygonShape3D_5kupq")
+
+[node name="CuriousSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+flip_h = true
+texture = ExtResource("3_2xx5f")
+
+[connection signal="body_entered" from="Visibility" to="." method="_on_visibility_body_entered"]
