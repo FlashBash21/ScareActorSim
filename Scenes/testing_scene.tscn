@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0e268mogkrta"]
+[gd_scene load_steps=10 format=3 uid="uid://b0e268mogkrta"]
 
 [ext_resource type="PackedScene" uid="uid://ccegtpocg0r0x" path="res://Scenes/Objects/BasicAndTesting/BasicFloor.tscn" id="1_4etwq"]
 [ext_resource type="PackedScene" uid="uid://cgtrmkgfodorb" path="res://Scenes/player.tscn" id="1_37ffc"]
@@ -6,6 +6,7 @@
 [ext_resource type="LightmapGIData" uid="uid://kfokhpghpias" path="res://Lightmaps/testing_scene.lmbake" id="3_y1rea"]
 [ext_resource type="PackedScene" uid="uid://dxilsysubg6a7" path="res://Scenes/basic_enemy.tscn" id="5_n2of4"]
 [ext_resource type="PackedScene" uid="uid://dtixh4cyhbgve" path="res://Scenes/Managers/agent_controller.tscn" id="6_ordbw"]
+[ext_resource type="PackedScene" uid="uid://d3pyv7emommkg" path="res://Scenes/Managers/Manager Objects/wander_point.tscn" id="7_ifbs2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_sr6ru"]
 vertices = PackedVector3Array(-38.25, 40.5, -38.25, 38.25, 40.5, -38.25, 39.75, 40.5, -39.5, 39.5, 40.5, -41.5, -39.5, 40.5, -41.5, -39.5, 40.5, -39.75, -41.5, 40.5, 39.75, -40, 40.5, 39.75, -38.5, 40.5, 38.25, -41.5, 40.5, -39.5, -37.25, 2.5, -39.5, -37.25, 2.5, -38.5, 37.5, 2.5, -38.5, 37.5, 2.5, -39.5, 38.5, 40.5, 38, 40, 40.5, 39.75, 41.5, 40.5, 39.75, 41.5, 40.5, -39.5, -39.25, 2.5, -39.25, -39.25, 2.5, -38.5, -38.5, 2.5, -38.5, -38.5, 2.5, -39.25, 38.75, 2.5, -39.25, 38.75, 2.5, -38.5, 39.5, 2.5, -38.5, 39.5, 2.5, -39.25, -39.5, 2.5, -37.25, -39.5, 2.5, 37.5, -38.5, 2.5, 37.5, -38.5, 2.5, -37.25, -37.25, 2.5, -24, -26, 2.5, -23.75, -26, 2.5, -25.25, -25.25, 2.5, -26, -23.75, 2.5, -26, -24, 2.5, -37.25, -37.25, 2.5, -37.25, -6, 2.5, -26, -5.75, 2.5, -37.25, -3.75, 2.5, -25.25, -3.75, 2.5, -23.5, 4, 2.5, -23.5, 4, 2.5, -25.25, 4.75, 2.5, -26, 6.25, 2.5, -26, 6, 2.5, -37.25, -4.5, 2.5, -26, 24, 2.5, -26, 24.25, 2.5, -37.25, 26.25, 2.5, -25.25, 26.25, 2.5, -23.75, 37.5, 2.5, -24, 25.5, 2.5, -26, 37.5, 2.5, -37.25, 38.75, 2.5, -37.25, 38.75, 2.5, 37.5, 39.5, 2.5, 37.5, 39.5, 2.5, -37.25, -37.25, 2.5, -5.75, -26, 2.5, -6, 26.25, 2.5, -6, 37.5, 2.5, -5.75, -3.75, 2.5, -6.25, 4, 2.5, -6.25, -4.5, 2.5, -3.75, -6.25, 2.5, -3.75, -6.25, 2.5, 4, -4.5, 2.5, 4, 4, 2.5, 4.75, 4.75, 2.5, 4, 4.75, 2.5, -3.75, -3.75, 2.5, 4.75, -3.75, 2.5, 6.5, 4, 2.5, 6.5, 4, 2.5, -4.5, -3.75, 2.5, -4.5, 6.5, 2.5, 4, 6.5, 2.5, -3.75, -25.25, 2.5, 4, -23.5, 2.5, 4, -23.5, 2.5, -3.75, -25.25, 2.5, -3.75, -37.25, 2.5, 6, -26, 2.5, 6.25, -26, 2.5, 4.75, -26, 2.5, -4.5, 23.75, 2.5, -3.75, 23.75, 2.5, 4, 25.5, 2.5, 4, 25.5, 2.5, -3.75, 26.25, 2.5, 4.75, 26.25, 2.5, 6.25, 37.5, 2.5, 6, 26.25, 2.5, -4.5, -37.25, 2.5, 24.25, -26, 2.5, 24, 26.25, 2.5, 24, 37.5, 2.5, 24.25, -3.75, 2.5, 23.75, 4, 2.5, 23.75, 4, 2.5, 25.5, -3.75, 2.5, 25.5, -4.5, 2.5, 26.25, -6, 2.5, 26.25, -5.75, 2.5, 37.5, 4.75, 2.5, 26.25, 6, 2.5, 37.5, 6.25, 2.5, 26.25, -24, 2.5, 37.5, -23.75, 2.5, 26.25, -25.25, 2.5, 26.25, -26, 2.5, 25.5, -37.25, 2.5, 37.5, 26.25, 2.5, 25.5, 25.5, 2.5, 26.25, 24, 2.5, 26.25, 24.25, 2.5, 37.5, 37.5, 2.5, 37.5, -39.5, 40.5, 40, 38.25, 40.5, 38.5, 39.5, 40.5, 40, 39.5, 40.5, 41.5, -39.5, 40.5, 41.5, -39.25, 2.5, 38.75, -39.25, 2.5, 39.5, -38.5, 2.5, 39.5, -38.5, 2.5, 38.75, -37.25, 2.5, 38.75, -37.25, 2.5, 39.75, 37.5, 2.5, 39.75, 37.5, 2.5, 38.75, 38.75, 2.5, 38.75, 38.75, 2.5, 39.5, 39.5, 2.5, 39.5, 39.5, 2.5, 38.75)
@@ -145,5 +146,45 @@ light_data = ExtResource("3_y1rea")
 basic_enemy = ExtResource("5_n2of4")
 spawn_points = Array[Vector3]([Vector3(30, 6, 0), Vector3(-30, 6, 0), Vector3(0, 6, 30), Vector3(0, 6, -30)])
 wander_points = Array[Vector3]([Vector3(20, 0, 0), Vector3(0, 0, 20), Vector3(-20, 0, 0), Vector3(0, 0, -20), Vector3(20, 0, 20), Vector3(20, 0, -20), Vector3(-20, 0, 20), Vector3(-20, 0, -20)])
+physical_wander_points = true
 nav_area = NodePath("../NavigationRegion3D")
 TEMP_PLAYER_REF = NodePath("../Player")
+
+[node name="Point1" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Point2" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9406, 2, 0)
+
+[node name="Point3" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.606, 2, -32.9998)
+
+[node name="Point4" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4922, 2, 32.4854)
+
+[node name="Point5" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.0709, 2, -32.3014)
+
+[node name="Point6" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.3644, 2, 32.6971)
+
+[node name="Point7" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.3902, 2, 0)
+
+[node name="Point8" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -31.6939)
+
+[node name="Point9" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.6844, 2, 0)
+
+[node name="Point10" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 32.7329)
+
+[node name="Point11" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 16.3738)
+
+[node name="Point12" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6909, 2, 0)
+
+[node name="Point13" parent="AgentController" instance=ExtResource("7_ifbs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14.0457)

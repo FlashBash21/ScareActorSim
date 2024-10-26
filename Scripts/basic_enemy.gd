@@ -7,7 +7,10 @@ signal request_new_pos(ref)
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 const SPEED = 2.0
-const JUMP_VELOCITY = 4.5
+
+enum STATES {WANDERING, FLEEING}
+
+var state = STATES.WANDERING
 
 func _physics_process(delta: float) -> void:
 	
@@ -27,14 +30,36 @@ func _physics_process(delta: float) -> void:
 	
 	look_at(global_position + direction, Vector3.UP)
 	
+	aimVisibilityStatus()
+	
 	move_and_slide()
 	
 func set_target_position(target_position: Vector3):
 	nav_agent.set_target_position(target_position)
 
+func aimVisibilityStatus() -> void:
+	if not $CuriousSprite.visible:
+		return
+	for body in $Visibility.get_overlapping_bodies():
+		if (body is Player):
+			updateVisibilityStatus(body)
+			$CuriousSprite.look_at(body.global_position, Vector3.UP)
+			$CuriousSprite.rotation.x = 0
+		
+func updateVisibilityStatus(player: Player) -> void:
+	var distance = player.global_position - self.global_position
+	if distance.length() <= 8:
+		$CuriousSprite.texture = load("res://Assets/danger.png")
+	else:
+		$CuriousSprite.texture = load("res://Assets/question mark.png")
 
 func _on_visibility_body_entered(body: Node3D) -> void:
-	body = body as Player
-	print("Player Detected")
-	$CuriousSprite.visible = true
-	$CuriousSprite.look_at(body.global_position, Vector3.UP)
+	if (body is Player):
+		updateVisibilityStatus(body)
+		$CuriousSprite.visible = true
+		$CuriousSprite.look_at(body.global_position, Vector3.UP)
+
+
+func _on_visibility_body_exited(body: Node3D) -> void:
+	if (body is Player):
+		$CuriousSprite.visible = false

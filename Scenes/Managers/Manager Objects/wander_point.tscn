@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3pyv7emommkg"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/point.gd" id="1_kl5uq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2sdes"]
+
+[node name="Point" type="Node3D" groups=["point"]]
+script = ExtResource("1_kl5uq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_2sdes")

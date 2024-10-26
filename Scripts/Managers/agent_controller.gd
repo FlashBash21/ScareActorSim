@@ -1,14 +1,29 @@
 extends Node
 
+## The Scene which the controller spawns
 @export var basic_enemy : PackedScene
+## An array of spawn points to use
 @export var spawn_points : Array[Vector3]
+## An array of points which agents can wander to
 @export var wander_points : Array[Vector3]
+## If enabled, controller will look for WanderPoint children to use for the wander_points array. Any other values in the array will be ignored
+@export var physical_wander_points : bool
+## NOT IMPLEMENTED: If enabled, controller will look for SpawnPoint children to use for the spawn_points array. Any other values in the array will be ignored
+@export var phyiscal_spawn_points : bool
 
 @export var nav_area : NavigationRegion3D
 @export var TEMP_PLAYER_REF : CharacterBody3D
 
 
 var agents : Array[CharacterBody3D]
+
+func _ready():
+	if physical_wander_points:
+		wander_points.clear()
+		for child in get_children():
+			child = child as WanderPoint
+			if child:
+				wander_points.append(child.global_position)
 
 func _physics_process(delta: float) -> void:
 	#order_all_agents(TEMP_PLAYER_REF.global_position)
