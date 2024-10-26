@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name Enemy
 
 signal request_new_pos(ref)
+signal request_flee_pos(ref)
 
 @onready var nav_agent = $NavigationAgent3D as NavigationAgent3D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -34,6 +35,13 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	match state:
+		STATES.WANDERING:
+			pass
+		STATES.FLEEING:
+			pass
+
+
 func set_target_position(target_position: Vector3):
 	nav_agent.set_target_position(target_position)
 
@@ -50,6 +58,7 @@ func updateVisibilityStatus(player: Player) -> void:
 	var distance = player.global_position - self.global_position
 	if distance.length() <= 8:
 		$CuriousSprite.texture = load("res://Assets/danger.png")
+		request_flee_pos.emit(self)
 	else:
 		$CuriousSprite.texture = load("res://Assets/question mark.png")
 

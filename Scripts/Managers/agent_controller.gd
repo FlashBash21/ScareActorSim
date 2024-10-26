@@ -37,6 +37,7 @@ func spawn_agent() -> void:
 		enemy.global_position = point
 		agents.append(enemy)
 		enemy.request_new_pos.connect(find_new_pos)
+		enemy.request_flee_pos.connect(find_flee_pos)
 
 #update all agents' target position
 func order_all_agents(pos: Vector3) -> void:
@@ -47,7 +48,19 @@ func _on_spawn_timer_timeout() -> void:
 	if agents.size() < 10:
 		spawn_agent()
 
-func find_new_pos(ref):
+func find_new_pos(ref) -> void:
 	var point = wander_points.pick_random()
 	if point:
 		ref.set_target_position(point)
+
+func find_flee_pos(ref) -> void:
+	var query_pos = wander_points.duplicate()
+	while true:
+		var point = query_pos.pick_random()
+		var dir_to_point = ref.global_position.direction_to(point)
+		var dir_to_player = ref.global_position.direction_to(TEMP_PLAYER_REF.global_position)
+		if dir_to_player.dot(dir_to_point) < 0:
+			ref.set_target_position(point)
+			return
+		query_pos.erase(point)
+	
