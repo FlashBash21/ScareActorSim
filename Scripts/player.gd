@@ -1,10 +1,10 @@
 extends CharacterBody3D
 class_name Player
 
-const SPEED = 5.0
+const SPEED = 4.0
 const SENSITIVITY = 0.003
 const MAX_STAMINA = 1.
-const SPRINT_MULTI = 1.5
+const SPRINT_MULTI = 1.25
 
 var stamina = MAX_STAMINA
 

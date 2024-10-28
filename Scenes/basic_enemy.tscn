@@ -44,5 +44,4 @@ visible = false
 flip_h = true
 texture = ExtResource("3_2xx5f")
 
-[connection signal="body_entered" from="Visibility" to="." method="_on_visibility_body_entered"]
 [connection signal="body_exited" from="Visibility" to="." method="_on_visibility_body_exited"]
