@@ -15,8 +15,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var oxygen_meter = $Control/ProgressBar
 
-var oxygen_bar = 100.0
 var mask_on = true
 
 func _ready():
@@ -27,16 +27,13 @@ func toggle_mask():
 	
 func oxygen_control():
 	if mask_on:
-		oxygen_bar -= .1
-		if(oxygen_bar <= 0):
+		oxygen_meter.value -= 0.25
+		if(oxygen_meter.value <= 0):
+			#oxygen_bar = 0
 			print("you died")
 	else:
-		if(oxygen_bar < 100):
-			oxygen_bar += .1
-		
-	
-	
-	print("oxygen level: ", oxygen_bar)
+		if(oxygen_meter.value < 100):
+			oxygen_meter.value += 0.5
 
 
 func _unhandled_input(event):
