@@ -24,17 +24,20 @@ func _ready():
 	
 func toggle_mask():
 	mask_on = !mask_on
+	$MaskNotif.visible = mask_on
 	
-func oxygen_control():
+func oxygen_control(delta):
 	if mask_on:
-		oxygen_meter.value -= 0.25
+		oxygen_meter.value -= 5 * delta
 		if(oxygen_meter.value <= 0):
 			#oxygen_bar = 0
 			print("you died")
 	else:
 		if(oxygen_meter.value < 100):
-			oxygen_meter.value += 0.5
+			oxygen_meter.value += 100 * delta
 
+	if Input.get_action_strength("sprint"):
+		oxygen_meter.value -= 15 * delta
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -51,7 +54,7 @@ func _physics_process(delta):
 		toggle_mask()
 		print("toggle mask - ", mask_on)
 	
-	oxygen_control()
+	oxygen_control(delta)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

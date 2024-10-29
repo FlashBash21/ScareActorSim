@@ -23,11 +23,10 @@ mesh = SubResource("CapsuleMesh_ggj70")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621856, -0.484977)
-fov = 37.8493
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(269, 220)
+[node name="MaskNotif" type="Sprite2D" parent="."]
+position = Vector2(68, 583.5)
+scale = Vector2(1, 0.485)
 texture = SubResource("PlaceholderTexture2D_sk7ve")
 region_enabled = true
 region_rect = Rect2(0, 0, 100, 200)
